@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2023/10/30 14:02:44.000.164,=C:\Users\davis\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2023/10/30 14:05:16.000.089,C:\Users\davis\Documents\Embarcadero\Studio\Projects\Unit1.dfm=C:\Users\davis\Documents\delphi_projects\MonolitoFinanceiro\src\view\MonolitoFinanceiro.View.Principal.dfm</Transaction>
+    <Transaction>2023/10/30 14:05:16.000.089,C:\Users\davis\Documents\Embarcadero\Studio\Projects\Unit1.pas=C:\Users\davis\Documents\delphi_projects\MonolitoFinanceiro\src\view\MonolitoFinanceiro.View.Principal.pas</Transaction>
+    <Transaction>2023/10/30 14:05:48.000.758,C:\Users\davis\Documents\Embarcadero\Studio\Projects\Project1.dproj=C:\Users\davis\Documents\delphi_projects\MonolitoFinanceiro\MonolitoFinanceiro.dproj</Transaction>
+    <Transaction>2023/10/30 14:30:24.000.385,=C:\Users\davis\Documents\delphi_projects\MonolitoFinanceiro\Unit1.pas</Transaction>
+    <Transaction>2023/10/30 14:33:33.000.719,C:\Users\davis\Documents\delphi_projects\MonolitoFinanceiro\Unit1.dfm=C:\Users\davis\Documents\delphi_projects\MonolitoFinanceiro\src\view\MonolitoFinanceiro.View.CadastroPadrao.dfm</Transaction>
+    <Transaction>2023/10/30 14:33:33.000.719,C:\Users\davis\Documents\delphi_projects\MonolitoFinanceiro\Unit1.pas=C:\Users\davis\Documents\delphi_projects\MonolitoFinanceiro\src\view\MonolitoFinanceiro.View.CadastroPadrao.pas</Transaction>
+  </Transactions>
+</BorlandProject>

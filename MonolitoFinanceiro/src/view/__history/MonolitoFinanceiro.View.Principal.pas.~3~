@@ -1,0 +1,28 @@
+unit MonolitoFinanceiro.View.Principal;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Menus;
+
+type
+  TMonolitoPrincipal = class(TForm)
+    MenuInicio: TMainMenu;
+    MenuItemInicio: TMenuItem;
+    MenuItemRelatorios: TMenuItem;
+    MenuItemAjuda: TMenuItem;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  MonolitoPrincipal: TMonolitoPrincipal;
+
+implementation
+
+{$R *.dfm}
+
+end.
