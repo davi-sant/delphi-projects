@@ -1,0 +1,55 @@
+unit MonolitoFinanceiro.View.Splash;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ExtCtrls, Vcl.Imaging.pngimage,
+  Vcl.ComCtrls, Vcl.StdCtrls;
+
+type
+  TFormSplash = class(TForm)
+    PainelPrincipal: TPanel;
+    ImageLogo: TImage;
+    LabelStatus: TLabel;
+    ProgressBar: TProgressBar;
+    PanelContentImage: TPanel;
+    TimerProgressBar: TTimer;
+    LabelTitle: TLabel;
+    PanelContentLabelStatus: TPanel;
+    Image1: TImage;
+    PanelContentImageStatus: TPanel;
+    Image2: TImage;
+    Image3: TImage;
+    Image4: TImage;
+    procedure TimerProgressBarTimer(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FormSplash: TFormSplash;
+
+implementation
+
+{$R *.dfm}
+
+procedure TFormSplash.TimerProgressBarTimer(Sender: TObject);
+begin
+  if ProgressBar.Position <= 100 then
+  begin
+    ProgressBar.StepIt;
+
+    case ProgressBar.Position of
+      10 : LabelStatus.Caption := 'Carregando dependências ...';
+      25 : LabelStatus.Caption := 'Conectando ao banco de dados ...';
+      45 : LabelStatus.Caption := 'Carregando as configurações ...';
+      65 : LabelStatus.Caption := 'Iniciando o sistema ...';
+      100 : Close;
+    end;
+  end;
+end;
+
+end.

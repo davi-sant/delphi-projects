@@ -4,8 +4,8 @@ object FormCadastro: TFormCadastro
   BorderIcons = [biSystemMenu]
   BorderStyle = bsSingle
   Caption = 'Cadastro'
-  ClientHeight = 662
-  ClientWidth = 948
+  ClientHeight = 661
+  ClientWidth = 944
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -188,36 +188,32 @@ object FormCadastro: TFormCadastro
   object CardPanelPrincipal: TCardPanel
     Left = 0
     Top = 0
-    Width = 948
-    Height = 662
+    Width = 944
+    Height = 661
     Align = alClient
     ActiveCard = CardPnlPesquisa
     BevelOuter = bvNone
     Caption = 'CardPanelPrincipal'
     TabOrder = 0
-    ExplicitWidth = 944
-    ExplicitHeight = 661
+    ExplicitWidth = 940
+    ExplicitHeight = 660
     object CardPnlCadastro: TCard
       Left = 0
       Top = 0
-      Width = 948
-      Height = 662
+      Width = 944
+      Height = 661
       Caption = 'Cadastro'
       CardIndex = 0
       TabOrder = 0
-      ExplicitWidth = 944
-      ExplicitHeight = 661
       object Panel6: TPanel
         Left = 0
-        Top = 589
-        Width = 948
+        Top = 588
+        Width = 944
         Height = 73
         Align = alBottom
         BevelOuter = bvNone
         ParentBackground = False
         TabOrder = 0
-        ExplicitTop = 588
-        ExplicitWidth = 944
         object Panel7: TPanel
           Left = 0
           Top = 0
@@ -296,32 +292,36 @@ object FormCadastro: TFormCadastro
     object CardPnlPesquisa: TCard
       Left = 0
       Top = 0
-      Width = 948
-      Height = 662
+      Width = 944
+      Height = 661
       Caption = 'Pesquisa'
       CardIndex = 1
       TabOrder = 1
+      ExplicitWidth = 940
+      ExplicitHeight = 660
       object PnlPesquisa: TPanel
         Left = 0
         Top = 0
-        Width = 948
+        Width = 944
         Height = 100
         Align = alTop
         BevelOuter = bvNone
         ParentBackground = False
         TabOrder = 0
+        ExplicitWidth = 940
         object PnlContentPesquisa: TPanel
           Left = 0
           Top = 0
-          Width = 948
+          Width = 944
           Height = 88
           Align = alTop
           BevelOuter = bvNone
           Color = clWindow
           ParentBackground = False
           TabOrder = 0
+          ExplicitWidth = 940
           object PnlRigth: TPanel
-            Left = 936
+            Left = 932
             Top = 0
             Width = 12
             Height = 87
@@ -329,6 +329,7 @@ object FormCadastro: TFormCadastro
             BevelOuter = bvNone
             ParentBackground = False
             TabOrder = 0
+            ExplicitLeft = 928
           end
           object PnlLeft: TPanel
             Left = 0
@@ -343,12 +344,13 @@ object FormCadastro: TFormCadastro
           object LinhaFundo: TPanel
             Left = 0
             Top = 87
-            Width = 948
+            Width = 944
             Height = 1
             Align = alBottom
             BevelOuter = bvNone
             ParentBackground = False
             TabOrder = 2
+            ExplicitWidth = 940
           end
           object Panel3: TPanel
             Left = 31
@@ -434,6 +436,7 @@ object FormCadastro: TFormCadastro
                 ParentBackground = False
                 ParentFont = False
                 TabOrder = 1
+                OnClick = BtnPesquisarClick
                 OnMouseEnter = BtnPesquisarMouseEnter
                 OnMouseLeave = BtnPesquisarMouseLeave
               end
@@ -483,13 +486,15 @@ object FormCadastro: TFormCadastro
       end
       object PnlBotoes: TPanel
         Left = 0
-        Top = 589
-        Width = 948
+        Top = 588
+        Width = 944
         Height = 73
         Align = alBottom
         BevelOuter = bvNone
         ParentBackground = False
         TabOrder = 1
+        ExplicitTop = 587
+        ExplicitWidth = 940
         object Panel4: TPanel
           Left = 0
           Top = 0
@@ -593,6 +598,8 @@ object FormCadastro: TFormCadastro
               BB2E76A3EA15EE790A019F7AC4AFE4AB8D7F01C1CE039B0C2CF9040000000049
               454E44AE426082}
             Transparent = True
+            OnMouseEnter = BtnAlterarMouseEnter
+            OnMouseLeave = BtnAlterarMouseLeave
             ExplicitLeft = 1
             ExplicitTop = 1
             ExplicitHeight = 39
@@ -639,19 +646,22 @@ object FormCadastro: TFormCadastro
               08E99D226A9D8D9C34BE3A2222B205409FDC05019CA7288A7D38F701711C5B70
               F2F3191E1FA2AFBA8D7F2E4C1B2268A9577F0000000049454E44AE426082}
             Transparent = True
+            OnMouseEnter = BtnExcluirMouseEnter
+            OnMouseLeave = BtnExcluirMouseLeave
             ExplicitLeft = 1
             ExplicitTop = 1
             ExplicitHeight = 39
           end
         end
         object ContentLeft: TPanel
-          Left = 783
+          Left = 779
           Top = 0
           Width = 165
           Height = 73
           Align = alRight
           BevelOuter = bvNone
           TabOrder = 4
+          ExplicitLeft = 775
           object BtnCancelar: TPanel
             Left = 21
             Top = 16
@@ -677,38 +687,44 @@ object FormCadastro: TFormCadastro
         Left = 0
         Top = 100
         Width = 12
-        Height = 489
+        Height = 488
         Align = alLeft
         BevelOuter = bvNone
         ParentBackground = False
         TabOrder = 2
+        ExplicitHeight = 487
       end
       object Panel2: TPanel
-        Left = 936
+        Left = 932
         Top = 100
         Width = 12
-        Height = 489
+        Height = 488
         Align = alRight
         BevelOuter = bvNone
         ParentBackground = False
         TabOrder = 3
+        ExplicitLeft = 928
+        ExplicitHeight = 487
       end
       object PnlConteudo: TPanel
         Left = 12
         Top = 100
-        Width = 924
-        Height = 489
+        Width = 920
+        Height = 488
         Align = alClient
         BevelOuter = bvNone
         Color = clWindow
         ParentBackground = False
         TabOrder = 4
+        ExplicitWidth = 916
+        ExplicitHeight = 487
         object GridConteudo: TDBGrid
           Left = 0
           Top = 0
-          Width = 924
-          Height = 489
+          Width = 920
+          Height = 488
           Align = alClient
+          DataSource = DataSource2
           TabOrder = 0
           TitleFont.Charset = DEFAULT_CHARSET
           TitleFont.Color = clWindowText
@@ -719,5 +735,11 @@ object FormCadastro: TFormCadastro
         end
       end
     end
+  end
+  object DataSource2: TDataSource
+    AutoEdit = False
+    DataSet = dmUsuarios.sql_usuarios
+    Left = 788
+    Top = 508
   end
 end

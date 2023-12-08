@@ -7,13 +7,14 @@ uses
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Menus;
 
 type
-  TMonolitoPrincipal = class(TForm)
+  TFormPrincipal = class(TForm)
     MenuInicio: TMainMenu;
     MenuItemCadastros: TMenuItem;
     MenuItemRelatorios: TMenuItem;
     MenuItemAjuda: TMenuItem;
     SubMenuItemPesquisa: TMenuItem;
     procedure SubMenuItemPesquisaClick(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
   private
     { Private declarations }
   public
@@ -21,19 +22,33 @@ type
   end;
 
 var
-  MonolitoPrincipal: TMonolitoPrincipal;
+  FormPrincipal: TFormPrincipal;
 
 implementation
 
 uses
-  MonolitoFinanceiro.View.CadastroPadrao;
+  MonolitoFinanceiro.View.Usuarios,
+  MonolitoFinanceiro.View.Splash;
+
+
 
 {$R *.dfm}
 
-procedure TMonolitoPrincipal.SubMenuItemPesquisaClick(Sender: TObject);
+procedure TFormPrincipal.FormCreate(Sender: TObject);
 begin
-  FormCadastro.Show;
-  FormCadastro.CardPnlPesquisa.Show
+ FormSplash := TFormSplash.Create(nil);
+
+ try
+  FormSplash.ShowModal;
+ finally
+   FreeAndNil(FormSplash);
+ end;
+
+end;
+
+procedure TFormPrincipal.SubMenuItemPesquisaClick(Sender: TObject);
+begin
+  FormUsuario.Show;
 end;
 
 end.

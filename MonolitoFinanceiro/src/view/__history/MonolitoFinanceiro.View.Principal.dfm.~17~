@@ -1,0 +1,35 @@
+object FormPrincipal: TFormPrincipal
+  Left = 0
+  Top = 0
+  Caption = 'Monolito Financeiro'
+  ClientHeight = 610
+  ClientWidth = 974
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -12
+  Font.Name = 'Segoe UI'
+  Font.Style = []
+  Menu = MenuInicio
+  Position = poScreenCenter
+  WindowState = wsMaximized
+  OnCreate = FormCreate
+  TextHeight = 15
+  object MenuInicio: TMainMenu
+    Left = 24
+    Top = 8
+    object MenuItemCadastros: TMenuItem
+      Caption = 'Cadastros'
+      object SubMenuItemPesquisa: TMenuItem
+        Caption = 'Pesquisa'
+        OnClick = SubMenuItemPesquisaClick
+      end
+    end
+    object MenuItemRelatorios: TMenuItem
+      Caption = 'Relat'#243'rios'
+    end
+    object MenuItemAjuda: TMenuItem
+      Caption = 'Ajuda'
+    end
+  end
+end

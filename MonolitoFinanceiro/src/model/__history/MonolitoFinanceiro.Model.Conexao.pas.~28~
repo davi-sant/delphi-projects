@@ -1,0 +1,92 @@
+﻿unit MonolitoFinanceiro.Model.Conexao;
+
+interface
+
+uses
+  System.SysUtils, System.Classes, FireDAC.Stan.Intf, FireDAC.Stan.Option,
+  FireDAC.Stan.Error, FireDAC.UI.Intf, FireDAC.Phys.Intf, FireDAC.Stan.Def,
+  FireDAC.Stan.Pool, FireDAC.Stan.Async, FireDAC.Phys, FireDAC.Phys.SQLite,
+  FireDAC.Phys.SQLiteDef, FireDAC.Stan.ExprFuncs,
+  FireDAC.Phys.SQLiteWrapper.Stat, FireDAC.VCLUI.Wait, Data.DB,
+  FireDAC.Comp.Client, FireDAC.Stan.Param, FireDAC.DatS, FireDAC.DApt.Intf,
+  FireDAC.DApt, FireDAC.Comp.DataSet;
+
+type
+    TdmConnection = class(TDataModule)
+    SQLConexao: TFDConnection;
+    FDQuery1: TFDQuery;
+    procedure DataModuleCreate(Sender: TObject);
+  private
+    { Private declarations }
+    const config_file = 'monolito_financeiro.cfg';
+  public
+    { Public declarations }
+    procedure loading_config;
+    procedure connect;
+    procedure disable_connect;
+  end;
+
+var
+  dmConnection: TdmConnection;
+
+implementation
+
+{%CLASSGROUP 'Vcl.Controls.TControl'}
+
+{$R *.dfm}
+
+
+
+procedure TdmConnection.connect;
+begin
+  SQLConexao.Connected;
+end;
+
+procedure TdmConnection.DataModuleCreate(Sender: TObject);
+begin
+  loading_config;
+  connect;
+end;
+
+procedure TdmConnection.disable_connect;
+begin
+  SQLConexao.Connected := false;
+end;
+
+procedure TdmConnection.loading_config;
+var
+  params_name   : String;
+  params_value  : String;
+  count         : Integer;
+  params_list   : TStringList;
+
+begin
+  SQLConexao.Params.Clear;
+
+  if not FileExists(config_file) then
+  raise Exception.Create('Arquivo de configura��o n�o encontrado.');
+
+  params_list := TStringList.Create;
+
+  try
+    params_list.LoadFromFile(config_file);
+
+    for count := 0 to Pred(params_list.Count) do
+    begin
+      if params_list[count].IndexOf('=') > 0 then
+      begin
+        params_name := params_list[0].Split(['='])[0].Trim; // Nesta linha estou retirando sinal de "=" e removendo os espa�os
+        params_value := params_list[1].Split(['='])[1].Trim;
+        SQLConexao.Params.Add(params_name + '=' + params_value);
+      end;
+
+    end;
+
+  finally
+    params_list.Free;
+  end;
+
+end;
+
+
+end.

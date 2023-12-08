@@ -6,7 +6,8 @@ uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ExtCtrls, Vcl.WinXPanels,
   Vcl.StdCtrls, Vcl.Imaging.pngimage, Vcl.Buttons, Data.DB, Vcl.Grids,
-  Vcl.DBGrids;
+  Vcl.DBGrids, MonolitoFinanceiro.Model.Usuarios;
+
 
 type
   TFormCadastro = class(TForm)
@@ -45,6 +46,7 @@ type
     icon_save: TImage;
     BtnCardCadastroCancelar: TPanel;
     ContentLeft: TPanel;
+    DataSource2: TDataSource;
     procedure BtnAdicionarClick(Sender: TObject);
     procedure BtnAdicionarMouseEnter(Sender: TObject);
     procedure BtnAdicionarMouseLeave(Sender: TObject);
@@ -57,6 +59,7 @@ type
     procedure BtnAlterarClick(Sender: TObject);
     procedure BtnCancelarClick(Sender: TObject);
     procedure BtnCardCadastroCancelarClick(Sender: TObject);
+    procedure BtnPesquisarClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -85,8 +88,6 @@ procedure TFormCadastro.BtnAdicionarMouseLeave(Sender: TObject);
 begin
 BtnAdicionar.Color := $00FF8000;
 end;
-
-
 
 procedure TFormCadastro.BtnAlterarClick(Sender: TObject);
 begin
@@ -122,6 +123,14 @@ end;
 procedure TFormCadastro.BtnExcluirMouseLeave(Sender: TObject);
 begin
   BtnExcluir.Color := $008080FF;
+end;
+
+procedure TFormCadastro.BtnPesquisarClick(Sender: TObject);
+begin
+  dmUsuarios.sql_usuarios.Close;
+  dmUsuarios.sql_usuarios.SQL.Clear;
+  dmUsuarios.sql_usuarios.SQL.Add('select * from usuarios');
+  dmUsuarios.sql_usuarios.Open;
 end;
 
 procedure TFormCadastro.BtnPesquisarMouseEnter(Sender: TObject);
